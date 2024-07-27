@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>HousingRentPrediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4231346c72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="top-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="">HousingRentPrediction</a>
+                <ul class="navbar-nav ml-auto">
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About">About Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Mumbai">Mumbai</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Delhi">Delhi</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Kolkata">Kolkata</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Bangalore">Bangalore</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Hyderabad">Hyderabad</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Chennai">Chennai</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Ahemdabad">Ahemdabad</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Pune">Pune</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Overall">Overall Analysis</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-me">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1>HousingRentPrediction</h1>
+    </div>
+    <hr>
+    <div class="city-row" id="About">
+        <h2>About us</h2>
+        <p>This website is implemented as a part of an End to End Machine Learning Project by <a
+                href="https://aayush1036.github.io/">Aayushmaan Jain</a> to help the users to get an
+            estimate of the house rent prices
+            without having to deal with granular details which need to be provided on other websites. The aim of this
+            project is to provide a simple GUI and
+            ease the search for rent prices of various houses in various cities using machine learning. This website
+            provides an accurate
+            estimate of the rent price for the provided inputs and if the user likes the estimate then the user may go
+            ahead with the search
+            on other websites.
+            This website provides accurate and up-to-date analysis of various aspects of houses in each city which aid
+            the users in making informed decisions.
+            The website sources its data from a SQL database in the backend and retrains the machine learning models and
+            updates the graphs every month to ensure that the predictions are
+            accurate and up to date. This website also enables the users to contribute to the database by adding their
+            own
+            observations provided that they are accurate and credible enough to be included in the machine learing
+            models.
+        </p>
+    </div>
+    <hr>
+    <!-- Cities -->
+    <div class="cities" id="cities">
+        <h2>Cities Covered.</h2>
+        <div class="city-row" id="Mumbai">
+            <img class="LeftAlign" src="https://i.ibb.co/JkV5B4f/mumbai.jpg" alt="Mumbai">
+            <h3><a href="{{url_for('mumbai')}}" class="member-link">Mumbai</a></h3>
+            <p>Mumbai, previously known as Bombay is one of the most populous and biggest cities of Maharashtra. Also
+                the biggest metropolis of this state, Mumbai is also popular as the entertainment and financial capital.
+                It is the largest city of India and fondly called as the city of dreams. It is a place filled with
+                dreamers and people who work hard day and night to achieve their dreams. From struggling actors,
+                laboureres, Bollywood stars to gangsters, Mumbai has a lot. A lot that can be written about and talked
+                about! Mumbai is also home to one of the biggest slum area as well as home to the richest and thus it is
+                only fair to describe Mumbai as a city for all. The majorly spoken language is definitely Hindi and
+                Marathi, but
+                this city has welcomed people from all faiths and religion warmly. If you want to know and experience
+                diversity, visit Mumbai. Known to
+                be a city filled with warm and friendly people, we believe that anything written about Mumbai is never
+                enough.
+        </div>
+    </div>
+
+    </div>
+    <div class="city-row" id="Delhi">
+        <img class="RightAlign" src="https://i.ibb.co/n0jgxdS/delhi.jpg" alt="delhi">
+        <h3><a href="{{url_for('delhi')}}" class="member-link">Delhi</a></h3>
+        <p>
+            Delhi National Capital Region or NCR includes New Delhi and the urban areas surrounding it in neighboring
+            states of Haryana, Uttar Pradesh and Rajasthan. Delhi NCR is India’s largest agglomeration (or town area)
+            and one of the world's largest with a population of over 47,000,000 according to the 2011 Census. It
+            contributes 7.5 per cent to India's GDP.
+            A seat of power for centuries, Delhi has seen numerous upheavals and has been destroyed and rebuilt on
+            numerous occasions. Like every major Indian city, Delhi too straddles two worlds: the old constantly
+            attempting to come to terms with the new. Old Delhi, once the capital of Mughal India, is a labyrinth of
+            narrow lanes lined with crumbling havelis and formidable mosques. In contrast, the imperial city of New
+            Delhi build by the British comprises spacious, tree-lined avenues and imposing government buildings.
+            The city's importance lies not just in its past glory as the seat of empires and magnificent monuments, but
+            also in the rich and diverse cultures. In Delhi, you will discover that the city is sprinkled with dazzling
+            gems: captivating ancient monuments dot every other corner, fascinating museums and art galleries contribute
+            to a thriving cultural scene and fabulous eateries and bustling markets round off a wholesome tourist
+            experience.
+
+        </p>
+    </div>
+    <div class="city-row" id="Kolkata">
+        <img class="LeftAlign" src="https://i.ibb.co/TBt5kLr/kolkata.jpg" alt="kolkata">
+        <h3><a href="{{url_for('kolkata')}}" class="member-link">Kolkata</a></h3>
+        <p>Known as the 'City of Joy', Kolkata holds an important place in the economy, politics and culture of India.
+            The capital of West Bengal, Kolkata is one of the four metropolitan cities in India and has retained its
+            quintessential charm despite modernization.
+            What Bengal thought today, India thought tomorrow, is a famous line associated with the city for having
+            produced some of the greatest thinkers, artists, film makers and writers like Rabindranth Tagore, Bankim
+            Chandra Chattopadhyay and Sarat Chandra Chattopadhyay and Satyajit Ray. Indeed, ideas in Kolkata in the
+            fields of art, literature, cinema and theater have provided inspiration to rest of the country.
+            Earlier known as Calcutta, the city was founded in 1698 and served as the capital of British India till 1911
+            and then was shifted to Delhi. The city was renamed, Kolkata in 2001. Located along the banks of river
+            Hoogly, Kolkata is connected to Howrah by the iconic Howrah bridge.
+
+            The citys colonial past is reflected in its architecture. Raj Bhavan, Writers Building and the Victoria
+            Memorial Hall are just some of the many buildings that hark back to a bygone era. Kolkata is also home to
+            some of the best educational institutes in the country.
+            Ideas of the famous social reformists Swami Vivekananda and Raja Ram Mohun Roy and Indian freedom fighter
+            Shubhas Chandra Bose were formed during their years of education in Kolkata. Mother Teresa spent a major
+            part of her life and also lies in eternal rest in the city at The Mother House.
+
+            It is among the 52 Shakti Peethas in the world. Goddess Kali is deeply revered and Durga Pooja is celebrated
+            in the grandest manner in Kolkata, especially at Kalighat's Kali temple.
+
+            Kolkata has produced some finest sportsmen who have represented India like Sourav Ganguly and Leander Paes.
+            It is also home to some of the most popular international sports stadium like Eden Gardens and Salt Lake
+            stadium.
+        </p>
+    </div>
+    <div class="city-row" id="Bangalore">
+        <img class="RightAlign" src="https://i.ibb.co/tJYkDLz/bangalore.jpg" alt="bangalore">
+        <h3><a href="{{url_for('bangalore')}}" class="member-link">Bangalore</a></h3>
+        <p>
+            Bangalore is the capital of the southern state of Karnataka and is Asia's fastest growing cosmopolitan city.
+            The name Bangalore is an anglicized version of the Kannada name, Bengaluru. The city is blessed with great
+            climate, gardens, parks, natural lakes, architectural landmarks, shopping malls and is home to the best
+            restaurants and pubs
+            Thanks to the several parks and gardens, Bangalore is often called the 'Garden city of India'. Bangalore is
+            also home to some of the best tech industries in India and to some of India's premier scientific
+            establishments. The city's role as the nation's leading Information Technology exporter has earned it the
+            sobriquet, 'Silicon Valley of India'.
+        </p>
+    </div>
+    <div class="city-row" id="Hyderabad">
+        <img class="LeftAlign" src="https://i.ibb.co/D4BZNJs/hyderabad.jpg" alt="hyderabad">
+        <h3><a href="{{url_for('hyderabad')}}" class="member-link">Hyderabad</a></h3>
+        <p>
+            Hyderabad, the City of Pearls, is the capital of Telangana and Andhra Pradesh and named after Hyder Mahal,
+            wife of the ruler Qutab Shah. More than 400 years old Hyderabad today is the fifth largest metropolis of
+            India and is known for its history, culture, heritage monuments crafts and dance.
+            Hyderabad is also home to the film industry of Andhra Pradesh, popularly known as known as Tollywood.
+            Tollywood is the third largest in India by the number of films produced annually. Ramoji Rao Film City,
+            Charminar, Golconda fort, Hussain Sagar Lake and Srisailam, are some of the touristy places you could visit
+            here.
+        </p>
+    </div>
+    <div class="city-row" id="Chennai">
+        <img class="RightAlign" src="https://i.ibb.co/VTBhbJs/chennai.jpg" alt="chennai">
+        <h3><a href="{{url_for('chennai')}}" class="member-link">Chennai</a></h3>
+        <p>
+            Chennai is a major commercial, cultural and educational center in India and one of the four metropolitan
+            cities of India along with Mumbai, New Delhi and Kolkata. It serves as the capital of Tamil Nadu. Despite
+            the visible 'westernization', Chennai still remains deep-rooted in culture and tradition.
+            Chennai and its surrounding areas were a part of successive south Indian kingdoms. However, the recorded
+            history of the city began after the establishment of the English settlement at Fort St George in 1644. Fort
+            St George continues to be the seat of several Tamil Nadu government offices even today. The lingering
+            influence of the British is still visible in the Raj-era monuments and widespread usage of English
+            Today, Chennai is a thriving hub of manufacturing, technology and healthcare industries. It also ranks high
+            among the foremost centers of information technology and business process outsourcing. The city is home to
+            the second-biggest film industry in the country after Mumbai. Besides Tamil, Malayalam and Telugu movies are
+            also produced in Chennai. Tamil stars are venerated and have often gone on to rule the state of Tamil Nadu.
+            From Carnatic music and Bharatnatyam to fusion, Chennai offers a lot when it comes to art and culture. World
+            renowned musicians like AR Rahman and Sivamani hail from this city. Rahman is also known as the Mozart of
+            Madras. The city is the Mecca for Carnatic music fans as thousands of concerts are held across the city
+            during the Tamil month of Marghazi. Dance recitals too are a common feature during the season.
+        </p>
+
+    </div>
+
+    <div class="city-row" id="Ahemdabad">
+        <img class="LeftAlign" src="https://ihplb.b-cdn.net/wp-content/uploads/2015/09/Kankaria-Lake-Ahmedabad.jpg"
+            alt="ahemdabad">
+        <h3><a href="{{url_for('ahemdabad')}}" class="member-link">Ahemdabad</a></h3>
+        <p>
+            Known as the Manchester of the East because of the many textile mills located here, Ahmedabad is the biggest
+            city in Gujarat and the seventh largest metropolitan in India. It is most famous for being home to the
+            Sabarmati Ashram associated with Mahatma Gandhi.
+
+            Ahmedabad is the most thriving city in west India after Mumbai. Also known as Karnavati or Amdavad, the city
+            is located on the banks of the Sabarmati River, about 30 km south of Gandhinagar, Gujarat's capital.
+            The city portrays an excellent balance between the new and the old and boasts of world class educational
+            institutions and industries as well as several historical sites. Ahmedabad's major attraction is the
+            exquisite architecture that blends the Hindu and Islamic styles. In recent years, the city has become a
+            hotspot for medical tourism with medical facilities available at low cost
+            There are some popular gardens in Ahmedabad which are worth a visit like the Law Garden, Bal Vatika and
+            Victoria Garden among others. The Kamla Nehru Zoological Park is a good venue for a day trip. Ahmedabad also
+            has several lakes; the man-made Kankaria Lake located in Maninagar is the biggest and is lit up beautifully
+            during the annual week-long Kankaria Carnival.
+        </p>
+
+    </div>
+
+    <div class="city-row" id="Pune">
+        <img class="RightAlign"
+            src="https://wikitravel.org/upload/en/thumb/9/9e/A_backside_view_of_the_Pune_University_Main_building-_2015-06-18_16-08.jpg/450px-A_backside_view_of_the_Pune_University_Main_building-_2015-06-18_16-08.jpg"
+            alt="pune">
+        <h3><a href="{{url_for('pune')}}" class="member-link">Pune</a></h3>
+        <p>
+            Pune is the seventh most populous city in India and the second-largest city in the state of Maharashtra,
+            with an estimated population of 7.4 million as of 2020. It has been ranked as "the most liveable city in
+            India" several times. Along with the municipal corporation limits of PCMC and the three cantonment towns
+            of Camp, Khadki and Dehu Road, Pune forms the urban core of the eponymous Pune Metropolitan Region (PMR).
+            According to the 2011 census the urban area had a combined population of 5.05 million whilst the population
+            of the metropolitan region was estimated at 7.4 million. Situated 560 metres (1,837 feet) above sea level on
+            the Deccan plateau on the right bank of the Mutha river, Pune is also the administrative headquarters of its
+            namesake district.The largest city of Maharashtra, Pune contributes a GDP(PPP) of $78 billion.
+            In the 18th century, the city was the seat of the Peshwas, the prime ministers of the Maratha Empire and one
+            of the most important political centres on the Indian subcontinent.[24] The city was also ruled by the
+            Ahmadnagar Sultanate, the Mughals and the Adil Shahi dynasty. Historical landmarks include Lal Mahal, the
+            Kasba Ganapati temple and Shaniwar Wada. Major historical events involving the city include the
+            Mughal-Maratha Wars and the Anglo-Maratha Wars.
+            Pune is widely regarded as the second major "IT hub of India" and the top "automobile and manufacturing hub
+            of India". It is known as the Oxford of the East with the presence of a wide range of educational
+            institutions. India's first indigenously run girls' school was started in Pune by Savitribai Phule. The city
+            has emerged as a major educational hub in recent decades, with nearly half of the total number of
+            international students in the country studying in Pune. Research institutes of information technology,
+            education, management and training attract students and professionals from India and overseas.
+        </p>
+
+    </div>
+    <hr>
+    <h3 id="Overall">Overall Analysis</h3>
+    <div class="city-row">
+        <h3>Preferred Cities</h3>
+        <img src="static/Overall/n_houses.png" alt="Number of houses in each city" class="LeftAlign">
+        From this image, we can see that Mumbai, Delhi and Pune are the most preferred destinations for students to
+        study as they have the most
+        number of houses rented. Since Delhi is the capital of the country, Mumbai is the financial capital of the
+        country and Pune is famous for
+        the educational institutes in it and is also known as Oxford of the East.
+    </div>
+    <br>
+    <br>
+    <div class="city-row">
+        <h3>Cost of Living</h3>
+        <img src="static/Overall/PRICE.png" alt="Average prices of houses in each city" class="RightAlign">
+        From this image, we can see that Delhi, Mumbai and Ahemdabad have the highest average rent prices amongst all
+        the cities because these cities
+        have a lot of scope for development and they have offices of many major companies so finding a job in these
+        cities will be an ideal choice and
+        hence the rent prices of these cities has a tendency to increase and hence the prices are high.
+    </div>
+    <br>
+    <div class="city-row">
+        <h3>Spaciousness</h3>
+        <img src="static/Overall/AREA.png" alt="Average area of houses in each city" class="LeftAlign">
+        From this image, we can see that Ahemdabad, Delhi and Hyderabad have the highest average area per flat amongst
+        all the cities because these cities
+        are developing and hence there is not much crowd in them and hence they have a large area of land to build
+        houses in and therefore the houses have a
+        higher area in these cities.
+    </div>
+    <br>
+    <br>
+    <div class="city-row">
+        <h3>Affordability</h3>
+        <img src="static/Overall/AFFORDABILITY.png" alt="Affordability of houses in each city" class="RightAlign">
+        Affordability is the average area that we can get for a particular price. This also aligns with the notion of a thing being
+        more affordable if we are able to get more of that thing for a lesser price. 
+        From the chart, we can see that Hyderabad, Ahmedabad and Kolkata are the most affordable cities to live in. 
+    </div>
+
+    </div>
+    </div>
+    <hr>
+    <div class="contact-me" id="contact-me">
+        <h2>Get In Touch</h2>
+        <h3>Contact Me</h3>
+        <p class="contact">You can contact me via the button given below. Feel free to contact me. <br>
+            Suggestions and corrections are welcomed warmly by me.</p>
+        <a class="btn btn-dark" href="mailto:aayushmaan1306@gmail.com">CONTACT ME</a>
+    </div>
+    <div class="bottom-container">
+        <p class="copyright">© HousingRentPrediction</p>
+        <p class="copyright">
+            <a href="mailto:aayushmaan1306@gmail.com" class="footer-link">Aayushmaan Jain</a>
+        </p>
+        <i class="fas fa-map-pin copyright"></i>
+        <p class="copyright"><a href="https://goo.gl/maps/M8wmQpq5xBob3Ujp7" class="footer-link">Mumbai, MH</a></p>
+    </div>
+</body>
+
+</html>
